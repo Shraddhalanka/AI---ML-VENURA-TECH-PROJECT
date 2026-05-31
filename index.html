@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume Parser AI</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workspace" aria-labelledby="app-title">
+        <div class="input-panel">
+          <div class="title-row">
+            <div>
+              <p class="eyebrow">Frontend Demo</p>
+              <h1 id="app-title">Resume Parser AI</h1>
+            </div>
+            <button class="ghost-button" id="sampleBtn" type="button">Use Sample</button>
+          </div>
+
+          <label class="field-label" for="targetRole">Target job role</label>
+          <select id="targetRole" class="select-input">
+            <option>Data Scientist</option>
+            <option>Python Developer</option>
+            <option>Java Developer</option>
+            <option>Web Developer</option>
+            <option>HR</option>
+            <option>DevOps Engineer</option>
+          </select>
+
+          <label class="field-label" for="resumeText">Resume text</label>
+          <textarea
+            id="resumeText"
+            class="resume-input"
+            placeholder="Paste resume content here..."
+          ></textarea>
+
+          <div class="actions">
+            <button id="analyzeBtn" class="primary-button" type="button">Analyze Resume</button>
+            <button id="clearBtn" class="secondary-button" type="button">Clear</button>
+          </div>
+        </div>
+
+        <aside class="results-panel" aria-live="polite">
+          <div class="score-block">
+            <span class="score-label">Resume Score</span>
+            <strong id="scoreValue">0.0</strong>
+            <span class="score-out-of">out of 10</span>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <span>Predicted Role</span>
+              <strong id="predictedRole">-</strong>
+            </div>
+            <div class="metric-card">
+              <span>Match Level</span>
+              <strong id="matchLevel">-</strong>
+            </div>
+          </div>
+
+          <div class="result-section">
+            <h2>Matching Skills</h2>
+            <div id="matchingSkills" class="skill-list empty">Analyze a resume to see matches.</div>
+          </div>
+
+          <div class="result-section">
+            <h2>Missing Skills</h2>
+            <div id="missingSkills" class="skill-list empty">Select a role and analyze a resume.</div>
+          </div>
+
+          <div class="result-section">
+            <h2>Recommendation</h2>
+            <p id="recommendation" class="recommendation">
+              Add resume text and run the analyzer to get a frontend-only suitability estimate.
+            </p>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
